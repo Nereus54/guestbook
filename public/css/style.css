@@ -1,0 +1,15 @@
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+
+.mb {
+    margin-bottom: 10px;
+}
+.mb-2x {
+    margin-bottom: 20px;
+}
+
+ul.about-list > li {
+    margin-bottom: 10px;
+}
