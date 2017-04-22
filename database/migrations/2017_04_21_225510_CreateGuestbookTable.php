@@ -1,13 +1,18 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateGuestbookTable extends Migration
 {
-    private $table = 'guestbook';
-    
+    private $migrates;
+
+    public function __construct()
+    {
+        $this->migrates = [
+            new App\Services\Guestbook\Migration\CreateGuestbookTable(),
+        ];
+    }
+
     /**
      * Run the migrations.
      *
@@ -15,13 +20,9 @@ class CreateGuestbookTable extends Migration
      */
     public function up()
     {
-        Schema::create($this->table, function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name', 40);
-            $table->string('phoneNumber', 30);
-            $table->text('message');
-            $table->timestamps();
-        });
+        foreach ($this->migrates as $migrate) {
+            $migrate->up();
+        }
     }
 
     /**
@@ -31,6 +32,8 @@ class CreateGuestbookTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists($this->table);
+        foreach ($this->migrates as $migrate) {
+            $migrate->down();
+        }
     }
 }

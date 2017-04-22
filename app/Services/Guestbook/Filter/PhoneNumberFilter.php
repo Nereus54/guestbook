@@ -48,7 +48,7 @@ class PhoneNumberFilter extends BaseFilter implements IFilterPhoneNumber
             $isValid = true;
         } 
         // is valid landline phone number ?
-        elseif ( preg_match('/^(2|31|32|33|34|35|36|37|38|41|42|43|44|45|46|47|48|51|52|53|54|55|56|57|58)(\/)?([0-9]){7,8}$/', $value, $landlineNubmerMatches) ) {
+        elseif ( preg_match('/^(\+421|00421)?(\(0\)|0)?(2|31|32|33|34|35|36|37|38|41|42|43|44|45|46|47|48|51|52|53|54|55|56|57|58)(\/)?([0-9]){7}$/', $value, $landlineNubmerMatches) ) {
             $isValid = true;
         }
         

@@ -18,6 +18,8 @@ class MessageFilter extends BaseFilter implements IFilterMessage
     
     public function filter()
     {
+        $this->value = nl2br($this->value);
+        
         $this->cleanInput();
         
         return $this->value;

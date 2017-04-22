@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        App\Services\Guestbook\Model\Guestbook::create([
+            'name' => 'Joe Doe',
+            'phoneNumber' => '+421 905 123 456',
+            'message' => 'Test message',
+        ]);
     }
 }
