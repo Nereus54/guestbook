@@ -44,7 +44,7 @@ class PhoneNumberFilter extends BaseFilter implements IFilterPhoneNumber
         $value = str_replace(' ', '', $value);
         
         // is valid mobile phone number ?
-        if ( preg_match('/^(\+421|00421)?(\(0\)|0)?(9[0-5]{1}[1-9]{1})([0-9]){6}$/', $value, $mobileNumberMatches) ) {
+        if ( preg_match('/^(\+421|00421)?(\(0\)|0)?(9[0-5]{1}[0-9]{1})([0-9]){6}$/', $value, $mobileNumberMatches) ) {
             $isValid = true;
         } 
         // is valid landline phone number ?
