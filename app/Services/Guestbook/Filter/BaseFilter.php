@@ -25,16 +25,14 @@ abstract class BaseFilter
     {
         $this->value = $value;
         
-        if ( !empty($options) ) {
-            $this->setOptions($options);
-        }
+		$this->setOptions($options);
     }
     
     protected function setOptions(array $options)
     {
         $this->options = $this->defaultOptions;
         
-        if ( count($options) >0 ) {
+        if ( count($options) > 0 ) {
             $this->options = array_merge($this->defaultOptions, $options);
         }
         
